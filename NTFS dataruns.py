@@ -38,7 +38,7 @@ def parse_run_list(run_list, run, cluster):
     print(f'')
     nextDataRun = run_list[leftNibble + rightNibble + 1:]
 
-    if len(nextDataRun) > 1 and nextDataRun[0] != '00':
+    if nextDataRun[0] != '00':
         parse_run_list(nextDataRun, run + 1, clusterNumber)
 
 
