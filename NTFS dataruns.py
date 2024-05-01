@@ -33,7 +33,7 @@ def parse_run_list(run_list, run, cluster):
     print(f'cluster elements (0x{leftNibble}{green}{rightNibble}{white}): {green}{clusterElements}{white} = '
           f'{red}{clusters}{white} clusters')
     print(f'extent elements (0x{green}{leftNibble}{white}{rightNibble}): {green}{startingExtentElements}{white} '
-          f'= starting extent {red}{startingExtent}{white}')
+          f'= offset to next starting extent {red}{startingExtent}{white}')
     print(f'Go to cluster number: {cluster} + {startingExtent} = {red}{clusterNumber}{white}')
     print(f'')
     nextDataRun = run_list[leftNibble + rightNibble + 1:]
