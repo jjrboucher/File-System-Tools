@@ -28,14 +28,19 @@ def parse_run_list(run_list, run, cluster):
     if startingExtent & (1 << (len(startingExtentString) * 4 - 1)):
         startingExtent -= 1 << (len(startingExtentString) * 4)
     clusterNumber = cluster + startingExtent
+    endCluster = clusterNumber + clusters - 1
 
     print(f'{red}Run List # {run} {white}(0x{run_list[0]})')
     print(f'cluster elements (0x{leftNibble}{green}{rightNibble}{white}): {green}{clusterElements}{white} = '
           f'{red}{clusters}{white} clusters')
     print(f'extent elements (0x{green}{leftNibble}{white}{rightNibble}): {green}{startingExtentElements}{white} '
           f'= offset to next starting extent {red}{startingExtent}{white}')
+
     print(f'Go to cluster number: {cluster} + {startingExtent} = {red}{clusterNumber}{white}')
-    print(f'')
+    print(f'Included clusters in this run:')
+    print(f'{clusterNumber} to {endCluster}\n')
+    nextCluster = clusterNumber
+
     nextDataRun = run_list[leftNibble + rightNibble + 1:]
 
     if len(nextDataRun) > 0 and nextDataRun[0] != '00':
