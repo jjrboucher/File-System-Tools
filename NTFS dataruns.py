@@ -4,7 +4,8 @@ Written by Jacques Boucher
 Script to parse NTFS data runs.
 
 Must enter hex values with spaces.
-E.g., 21 03 DA 0D 21 01 4A F2 31 05 65 F3 03
+E.g., 21 03 DA 0D 21 01 4A F2 31 05 65 FE 03
+E.g., 11 0A 74 21 76 B4 74 22 02 10 FC DB 23 00 00 01 F9 45 22 1A 0F 4B F0
 """
 
 red = f'\033[91m'
